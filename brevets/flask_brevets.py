@@ -53,7 +53,7 @@ def page_not_found(error):
 
 API_ADDR = os.environ["API_ADDR"]
 API_PORT = os.environ["API_PORT"]
-API_URL = f"https://{API_ADDR}/{API_PORT}/api"
+API_URL = f"http://{API_ADDR}:{API_PORT}/api"
 
 
 
@@ -127,7 +127,7 @@ def fetch():
     #Taken from Todolist
     brevet_dist, brevet_start_time, control_brevets = get_brevet()
     return flask.jsonify(
-            result={"brevet_dist": brevet_dist, "start_time": brevet_start_time, "control_dist": control_brevets}, 
+            result={"brevet_dist": brevet_dist, "brevet_start_time": brevet_start_time, "control_dist": control_brevets}, 
             status=1,
             message="Successfully fetched brevet list!")
 
