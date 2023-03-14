@@ -25,4 +25,4 @@ class Brevet(Document):
     """
     brevet_dist = FloatField(required = True)
     brevet_start_time = StringField(required = True)
-    control_brevets = ListField(EmbeddedDocumentField(Checkpoint), required = True)
+    control_brevets = EmbeddedDocumentListField(Checkpoint, required = True)
