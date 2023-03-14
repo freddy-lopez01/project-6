@@ -256,8 +256,11 @@
                         function(data) {
                            console.log(data);
                            if(data.status ==1){
-                              $("input[name='brevet_dist']").val(data.result.brevet_dist);
-                              $("input[name='brevet_start_time']").val(data.result.brevet_start_time);
+                              console.log("select[name='distance'] is: ",$("select[name='distance']").val());
+                              console.log("Setting select[name='distance'] to: ", data.result.distance);
+                              console.log("Setting input[name='brevet_start_time'] to: ", data.result.brevet_start_time);
+                              $("select[name='distance']").val(data.result.distance.toString());
+                              $("input[name='begin_date']").val(data.result.brevet_start_time);
                               var control = data.result.control_dist;
                               var num_control_brev = control.length;
 
@@ -294,11 +297,6 @@
                         });
                      // For each row in the HTML table
                    });
-
-
-
-
-
 
 
 
